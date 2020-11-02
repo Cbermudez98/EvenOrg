@@ -28,19 +28,19 @@
             $cl = $usuario->getCelular();
             $ps = $usuario->getPais();
             $cd = $usuario->getCiudad();
+            
+            echo "primernombre: ".$pm."<br>"."segundo nombre: ".$sn."<br>"."primer apellido: ".$pa."<br>"."segundo apellido: ".$sa."<br>"."Tipo identificacion: ".$ti."<br>"."numero identificacion: ".$ni."<br>"
+            ."fecha de nacimiento: ".$fn."<br>"."Correo: ".$co."<br>"."contraseña: ".$pw."<br>"."Telefono: ".$tl."<br>"."Celular".$cl."<br>"."Pais: ".$ps."<br>"."Ciudad: ".$cd."<br>";
 
-            $sql = "INSERT INTO(primerNombre,segundoNombre,primerApellido,segundoApellido,tipoIdentificacion,numIdentificacion,
-            fechaNacimiento,correo,contraseña,telefono,celular,pais,ciudad) VALUES('$pm','$sn','$pa','$sa','$ti','$ni','$fn','$co','$pw','$tl','$cl',
-            '$ps','$cd')";
+            $sql = "INSERT INTO usuario(primerNombre,segundoNombre,primerApellido,segundoApellido,tipoIdentificacion,numIdentificacion,fechaNacimiento,correo,contrasena,telefono,celular,pais,ciudad) VALUES ('$pm','$sn','$pa','$sa','$ti',$ni,'$fn','$co','$pw',$tl,$cl,'$ps','$cd')";
 
-            if (mysqli_query($this->db, $sql)) {
-                $message = "Exito al guardar";
+            if(mysqli_query($this->db, $sql)){
+                $mensaje = "Exito al guardar en la base de datos";
             }else{
-                $message = "Error al guardar".mysqli_error($this->db);
+                $mensaje = "Error al guardar datos => ".mysqli_error($this->db);
             }
 
-            mysqli_close($this->db);
-            return $message;
+            return $mensaje;
         }
 
         //leer

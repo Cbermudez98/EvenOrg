@@ -1,17 +1,17 @@
-var pnombre = document.getElementById('primerNombre'),
-    sn = document.getElementById('segundoNombre'),
-    pa = document.getElementById('primerApellido'),
-    sa = document.getElementById('segundoApellido'),
-    ti = document.getElementById('tipoIdentificacion'),
-    ni = document.getElementById('numIdentificacion'),
-    fn = document.getElementById('fechaNacimiento'),
+var pnombre = document.getElementById('primernombre'),
+    sn = document.getElementById('segundonombre'),
+    pa = document.getElementById('primerapellido'),
+    sa = document.getElementById('segundoapellido'),
+    ti = document.getElementById('tipoidentificacion'),
+    ni = document.getElementById('numdeidentificacion'),
+    fn = document.getElementById('fechanacimiento'),
     co = document.getElementById('correo'),
     pw = document.getElementById('password'),
-    pw2 = document.getElementById('passwordConfirmacion'),
+    pw2 = document.getElementById('passwordconfirmacion'),
     tl = document.getElementById('telefono'),
     cl = document.getElementById('celular'),
-    ps = document.getElementById('pais'),
-    cd = document.getElementById('ciudad'),
+    ps = document.getElementById('selectpais'),
+    cd = document.getElementById('selectciudad'),
     btn = document.getElementById('enviar');
 
     var vaidarPrimerNombre = function(){
@@ -35,19 +35,28 @@ var pnombre = document.getElementById('primerNombre'),
         }
     }
 
-    var validarTipoyNumIdentificacion = function(){
-        if(ti.value === "0" || ni.value === null || ni.value === "" || ni.length < 9 || ni.value <= 0){
-            console.log('Tipo identificacion y numero requeridos');
+    var validarTipoIdentificacion = function(){
+        if(ti.value === "selected disabled"){
+            console.log('Debe seleccionar un tipo identificacion');
             return false;
         }
     }
     /*Solucionar el error de tipo de documento y numero de identificacion 
     me esta retornando false en vez de true!!!.. */
 
+    var validarNumeroIdentificacion = function(){
+        
+
+        if(ni.value === null || ni.value === "" || ni.value.length < 9 || isNaN(ni.value)){
+            console.log('Error numero de identificacion');
+            return false;
+        }        
+    }
+
     var validarCorreo = function(){
         var correo = co.value;
         if(correo === null || correo === ""){
-            console.log('Error el campo no puede estar vacio');
+            console.log('Error el campo correo no puede estar vacio');
             return false;
         }
         for (let i = 0; i < correo.length; i++) {
@@ -67,12 +76,12 @@ var pnombre = document.getElementById('primerNombre'),
         var contr = pw.value,
             contr2 = pw2.value;
             if(contr === null || contr === ""){
-                console.log('Error el campo no puede estar vacio');
+                console.log('Error el campo contraseña no puede estar vacio');
                 return false;
             }
 
             if(contr2 === null || contr2 === ""){
-                console.log('Error el campo no puede estar vacio');
+                console.log('Error el campo validar contraseña no puede estar vacio');
                 return false;
             }
 
@@ -97,7 +106,7 @@ var pnombre = document.getElementById('primerNombre'),
         }
 
         if(tl.value === null || tl.value === ""){
-            console.log('Error el campo no puede estar vacio');
+            console.log('Error el campo telefono no puede estar vacio');
             return false;
         }
 
@@ -125,7 +134,7 @@ var pnombre = document.getElementById('primerNombre'),
         }
 
         if(cl.value === null || cl.value === ""){
-            console.log('Error el campo no puede estar vacio');
+            console.log('Error el campo celular no puede estar vacio');
             return false;
         }
 
@@ -146,22 +155,22 @@ var pnombre = document.getElementById('primerNombre'),
     }
 
     var validarPais = function(){
-        if(ps.value === null || ps.value === ""){
+        if(ps.value === "disabled selected"){
             console.log('Error el campo pais no puede estar vacio');
             return false;
         }
     }
 
     var validarCiudad = function(){
-        if(cd.value === null || cd.value === ""){
-            console.log('Error el campo ciudad no puede estar vacio');
+        if(cd.value === "disabled selected"){
+            console.log('Error seleccione una ciudad');
             return false;
         }
     }
 
-    const validar = function(){
+    var validar = function(){
         return vaidarPrimerNombre(), validarPrimerApellido(),
-        validarSegundoApelligo(),validarTipoyNumIdentificacion(),validarCorreo(),
+        validarSegundoApelligo(),validarTipoIdentificacion(),validarNumeroIdentificacion(),validarCorreo(),
         validarPassword(),validarTelefono(),validarCelular(),validarPais(),validarCiudad();
         
     }

@@ -4,11 +4,11 @@
 
         public function conexion(){
             $servidor = "localhost";
-            $db_name = "prueba_evenorg";
+            $dbname = "prueba_evenorg";
             $user = "root";
             $pass = "";
 
-            $conexion = new mysqli($servidor,$user,$pass,$db_name);
+            $conexion = new mysqli($servidor,$user,$pass,$dbname);
             $conexion->query("SET NAMES 'utf8'");
             return $conexion;
         }

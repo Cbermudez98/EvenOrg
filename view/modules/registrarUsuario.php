@@ -6,7 +6,7 @@
 <nav class="navbar navbar-light sticky-top fixed-top container-fluid" style="background-color: #fff; ">
       <form class="form-inline">
       <a class="navbar-brand" href="#">
-      <img src="{{asset('img/evenorg.png')}}" width="30" height="30" alt="" loading="lazy">
+      <img src="../img/evenorg.png" width="100" height="100" alt="" loading="lazy">
       
         <input class="form-control input-sm col-md-12 mb-6" type="search" placeholder="Search" aria-label="Search">
         <span class="input-group-addon">
@@ -44,82 +44,85 @@
 
 <!-- Start Form-->
 <div class="container">
-  <form action="" method="POST">
+  <form action="../../controller/userController.php" method="POST">
+  <input type="hidden" name="token" value="registrar">
     <div class="form-row ">
       <div class="col-md-6 mb-3">
         <label for="tipoidentificacion" >Tipo de identificación</label>
-    <select class="form-control form-control-sm col-10" id="tipoidentificacion " >
-      <option>Seleccione...</option>
-      <option>Cedula de ciudadania</option>
-      <option>Cedula extranjera</option>
+    <select class="form-control form-control-sm col-10" name="tipoidentificacion" id="tipoidentificacion" >
+      <option value="selected disabled">Seleccione...</option>
+      <option value="Cedula de ciudadania">Cedula de ciudadania</option>
+      <option value="Cedula de extranjeria">Cedula extranjera</option>
       
     </select>
     <br>
         <label for="primernombre" >Primer nombre</label>
-        <input type="text" class="form-control form-control-sm col-10" id="primernombre"placeholder="Primer nombre" >
+        <input type="text" class="form-control form-control-sm col-10" name="primernombre" id="primernombre"placeholder="Primer nombre" >
         <br>
         <label for="primerapellido">Primer apellido</label>
-        <input type="text" class="form-control form-control-sm col-10" id="primerapellido" placeholder="Primer apellido" >
+        <input type="text" class="form-control form-control-sm col-10" name="primerapellido" id="primerapellido" placeholder="Primer apellido" >
         <br>
         <label for="fechanacimiento">Fecha de nacimiento</label>
-        <input type="date" class="form-control form-control-sm col-10" id="fechanacimiento" >
+        <input type="date" class="form-control form-control-sm col-10" name="fechanacimiento" id="fechanacimiento" >
         <br>
-        <label for="validationDefault01">Télefono</label>
-        <input type="text" class="form-control form-control-sm col-10" id="telefono" placeholder="Télefono" >
+        <label for="telefono">Télefono</label>
+        <input type="number" class="form-control form-control-sm col-10"  name="telefono" id="telefono" placeholder="Télefono" >
         <br>
         <label for="selectpais">País</label>
-        <select class="form-control form-control-sm col-10" id="selectpais">
+        <select class="form-control form-control-sm col-10" name="selectpais" id="selectpais">
           <option value="disabled selected">Seleccione...</option>
-          <option>Colombia</option>
-          <option>Venezuela</option>
-          <option>Argentina</option>
-          <option>Peru</option>
-          <option>Chile</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Pero">Peru</option>
+          <option value="Chile">Chile</option>
         </select>
         <br>
-        <label for="inputPassword6">Contraseña</label>
-        <input type="password" id="inputPassword6" class="form-control form-control-sm col-10" aria-describedby="passwordHelpInline">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" class="form-control form-control-sm col-10" placeholder="***********" aria-describedby="passwordHelpInline">
       </div>
       <div class="col-md-6 mb-3">
         <label for="numdeidentificacion">Numero de identificación</label>
-        <input type="text" class="form-control form-control-sm col-10" id="numdeidentificacion"  placeholder="Numero de identificacion">
+        <input type="text" class="form-control form-control-sm col-10" name="numdeidentificacion" id="numdeidentificacion"  placeholder="Numero de identificacion">
         <br>
         <label for="segundonombre">Segundo nombre</label>
-        <input type="text" class="form-control form-control-sm col-10" id="segundonombre" placeholder="Segundo nombre">
+        <input type="text" class="form-control form-control-sm col-10" name="segundonombre" id="segundonombre" placeholder="Segundo nombre">
         <br>
         <label for="segundoapellido">Segundo apellido</label>
-        <input type="text" class="form-control form-control-sm col-10" id="segundoapellido"placeholder="Segundo apellido" >
+        <input type="text" class="form-control form-control-sm col-10" name="segundoapellido" id="segundoapellido"placeholder="Segundo apellido" >
         <br>
         <label for="correo">Correo</label>
-       <input type="text" class="form-control form-control-sm col-10" id="correo" placeholder="Correo">
+       <input type="email" class="form-control form-control-sm col-10" name="correo" id="correo" placeholder="Correo">
        <br>
        <label for="celular">Celular</label>
-        <input type="text" class="form-control form-control-sm col-10" id="celular" >
+        <input type="number" class="form-control form-control-sm col-10" placeholder="Celular" name="celular" id="celular" >
         <br>
         <label for="selectciudad">Ciudad</label>
-        <select class="form-control form-control-sm col-10" id="selectciudad">
+        <select class="form-control form-control-sm col-10" name="selectciudad" id="selectciudad">
           <option value="disabled selected">Seleccione...</option>
-          <option>Cartagena de indias</option>
-          <option>Barranquilla</option>
-          <option>Medellin</option>
-          <option>Bogota</option>
-          <option>Cali</option>
+          <option value="Cartagena de Indias">Cartagena de indias</option>
+          <option value="Barranquilla">Barranquilla</option>
+          <option value="Medellin">Medellin</option>
+          <option value="Medellin">Bogota</option>
+          <option value="Cali">Cali</option>
         </select>
         <br>
-        <label for="inputPassword6"> Confirmar Contraseña</label>
-        <input type="password" id="inputPassword6" class="form-control form-control-sm col-10" aria-describedby="passwordHelpInline">
+        <label for="passwordconfirmacion"> Confirmar Contraseña</label>
+        <input type="password" id="passwordconfirmacion" class="form-control form-control-sm col-10" placeholder="***********" aria-describedby="passwordHelpInline">
       </div>
     </div>
-</form>
+    <br>
+    <div class=" text-center">
+      <input type="submit" onclick="return validar()" class="btn btn-outline-primary btn-lg" value="Registrar">
+      <input type="submit" class="btn btn-outline-primary btn-lg" value="Cancelar">
+      
+    </div>
+  </form>
 </div>
 
-<br>
-<div class=" text-center">
-  <button type="button" class="btn btn-outline-primary btn-lg" >Registrar</button>
-  
-  <button type="button" class="btn btn-outline-primary btn-lg" >Cancelar</button>
-</div>
-<!-- End Form-->
+
+<script src="../../js/signup.js"></script>
+ <!--End Form-->
 
 <br><br><br><br>
 

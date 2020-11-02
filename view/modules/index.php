@@ -77,7 +77,7 @@
 <!--End Styles Carousel-->
 
 <!--Start Carousel-->
-<div id="mycarousel" class="  carousel slide carousel-fade d-flex ml-5 mr-5  mb-1" data-ride="carousel">
+<div id="mycarousel" class="carousel slide carousel-fade d-flex ml-5 mr-5  mb-1" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="mycarousel" data-slide-to="0" class="active"></li>
         <li data-target="mycarousel" data-slide-to="1"></li>
@@ -89,7 +89,7 @@
     </ol>
     <div class="carousel-inner ">
         <div class="carousel-item active" >
-          <div class="overlay-image" style="background-image:url({{asset('img/s1.jpg')}})"></div>
+          <div class="overlay-image" style="background-image:url('../img/s1.jpg')"></div>
             <div class="container">
                 <h1>Todos</h1>
                   <p >hfodhujadjgujg fjpdadput dutu
@@ -101,7 +101,7 @@
           </div> 
 
           <div class="carousel-item ">
-            <div class="overlay-image" style="background-image:url({{asset('img/s2.jpg')}})"></div>
+            <div class="overlay-image" style="background-image:url('../img/s2.jpg')"></div>
               <div class="container">
                 <h1>Para ti</h1>
                   <p >hfodhujadjgujg fjpdadput dutu
@@ -113,7 +113,7 @@
           </div> 
 
           <div class="carousel-item ">
-            <div class="overlay-image" style="background-image:url({{asset('img/s3.jpg')}})"></div>
+            <div class="overlay-image" style="background-image:url('../img/s3.jpg')"></div>
               <div class="container">
                 <h1>Hoy</h1>
                   <p >hfodhujadjgujg fjpdadput dutu
@@ -125,7 +125,7 @@
            </div>
 
           <div class="carousel-item ">
-            <div class="overlay-image" style="background-image:url({{asset('img/s4.jpg')}}) "></div>
+            <div class="overlay-image" style="background-image:url('..img/s4.jpg') "></div>
               <div class="container">
                 <h1>Este fin de semana</h1>
                   <p >hfodhujadjgujg fjpdadput dutu
@@ -137,7 +137,7 @@
            </div>  
 
           <div class="carousel-item ">
-           <div class="overlay-image" style="background-image:url({{asset('img/s5.jpg')}})"></div>
+           <div class="overlay-image" style="background-image:url('../img/s5.jpg')"></div>
               <div class="container">
                 <h1>Musica</h1>
                   <p >hfodhujadjgujg fjpdadput dutu
@@ -149,7 +149,7 @@
           </div> 
 
           <div class="carousel-item ">
-            <div class="overlay-image" style="background-image:url({{asset('img/s7.jpg')}})"></div>
+            <div class="overlay-image" style="background-image:url('../img/s6.jpg')"></div>
               <div class="container">
                 <h1>Gastronomia</h1>
                   <p >hfodhujadjgujg fjpdadput dutu
@@ -161,7 +161,7 @@
           </div> 
 
           <div class="carousel-item ">
-           <div class="overlay-image" style="background-image:url({{asset('img/s6.jpg')}})"></div>
+           <div class="overlay-image" style="background-image:url('../img/s7.jpg')"></div>
               <div class="container">
                 <h1>Gratis</h1>
                 <p >hfodhujadjgujg fjpdadput dutu
@@ -191,7 +191,7 @@
 <!--Start Options-->
 <div class="card-deck d-flex ml-5 mr-5">
     <div class="card" style="width: 18rem;">
-      <img src="{{asset('img/card1.jpg')}}" class="card-img-top" alt="...">
+      <img src="../img/card1.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Galeria</h5>
       <p class="card-text">Mira como disfruta le gente los eventos organizados por nosotros.</p>
@@ -199,7 +199,7 @@
     </div>
     </div>
       <div class="card" style="width: 18rem;">
-        <img src="{{asset('img/card2.jpg')}}" class="card-img-top" alt="...">
+        <img src="../img/card2.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Nuestros Lugares</h5>
         <p class="card-text">Mira todos los lugares que te ofrecemos para que crees tu evento favorito.</p>
@@ -207,7 +207,7 @@
     </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="{{asset('img/card3.jpg')}}" class="card-img-top" alt="...">
+      <img src="../img/card3.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Movilidad y Transporte</h5>
       <p class="card-text">Si lo deseas nosotros  te podemos llevar a ti y a tus familiares o amigos a su evento elegido.</p>

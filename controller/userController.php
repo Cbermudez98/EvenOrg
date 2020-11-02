@@ -96,7 +96,7 @@
         }
 
         public function setNumidentificacion($numIdentificacion){
-            $this->tipoIdentificacion = $numIdentificacion;
+            $this->numIdentificacion = $numIdentificacion;
         }
 
         public function setFechanacimiento($fechaNacimiento){
@@ -131,25 +131,25 @@
     if (isset($_POST['token'])) {
         $op = $_POST['token'];
     }
-    $md = new userModel();
+    $um = new userModel();
     switch ($op) {
-        case 'signup':
+        case 'registrar':
             $usuario = new Usuario();
-            $usuario->setPrimernombre($_POST['primerNombre']);
-            $usuario->setSegundonombre($_POST['segundoNombre']);
-            $usuario->setPrimerapellido($_POST['primerApellido']);
-            $usuario->setSegundoapellido($_POST['segundoApellido']);
-            $usuario->setTipoidentificacion($_POST['tipoIdentificacion']);
-            $usuario->setNumidentificacion($_POST['numIdentificacion']);
-            $usuario->setFechanacimiento($_POST['fechaNacimiento']);
+            $usuario->setPrimernombre($_POST['primernombre']);
+            $usuario->setSegundonombre($_POST['segundonombre']);
+            $usuario->setPrimerapellido($_POST['primerapellido']);
+            $usuario->setSegundoapellido($_POST['segundoapellido']);
+            $usuario->setTipoidentificacion($_POST['tipoidentificacion']);
+            $usuario->setNumidentificacion($_POST['numdeidentificacion']);
+            $usuario->setFechanacimiento($_POST['fechanacimiento']);
             $usuario->setCorreo($_POST['correo']);
             $usuario->setPassword($_POST['password']);
             $usuario->setTelefono($_POST['telefono']);
             $usuario->setCelular($_POST['celular']);
-            $usuario->setPais($_POST['pais']);
-            $usuario->setCiudad($_POST['ciudad']);
+            $usuario->setPais($_POST['selectpais']);
+            $usuario->setCiudad($_POST['selectciudad']);
 
-            $respuesta = $md->insertarUsuario($usuario);
+            $respuesta = $um->insertarUsuario($usuario);
             echo $respuesta;
 
 
