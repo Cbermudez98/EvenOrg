@@ -8,7 +8,7 @@
 
 <!-- Start Form-->
 <div class="container">
-  <form action="../../controller/userController.php" method="POST" class="border mx-auto p-3 form">
+  <form action="controller/userController.php" method="POST" class="border mx-auto p-3 form">
   <input type="hidden" name="token" value="registrar">
     <div class="form-row ">
       <div class="col-md-6 mb-3">

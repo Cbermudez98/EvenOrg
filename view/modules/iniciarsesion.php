@@ -18,7 +18,7 @@
         <label for="password"></label>
         <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
       </div>
-      <button type="submit" class="btn btn-block btn-primary">Iniciar</button>
+      <button type="submit" onclick="return validarLogin()" class="btn btn-block btn-primary">Iniciar</button>
     </form>
 </div>
 </div>
