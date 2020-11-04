@@ -143,7 +143,7 @@
             $usuario->setNumidentificacion($_POST['numdeidentificacion']);
             $usuario->setFechanacimiento($_POST['fechanacimiento']);
             $usuario->setCorreo($_POST['correo']);
-            $usuario->setPassword($_POST['password']);
+            $usuario->setPassword(md5($_POST['password']));
             $usuario->setTelefono($_POST['telefono']);
             $usuario->setCelular($_POST['celular']);
             $usuario->setPais($_POST['selectpais']);
@@ -155,11 +155,36 @@
 
             break;
         
+        case 'iniciarsesion':
+            $usuario = new Usuario();
+            
+
+            if (isset($_POST['user']) && isset($_POST['password'])) {
+                $usuario->setCorreo($_POST['user']);
+                $usuario->setPassword(md5($_POST['password']));
+                
+                $respuesta = $um->iniciarSesion($usuario);
+            }
+
+            echo $respuesta;
+
+        break;
+
         default:
             # code...
             break;
     }
 
+    if (isset($_GET['var'])) {
+        error_reporting(0);
+        $user = $um->cerrarSesion($_SESSION['correo']);
+
+        if ($user !== "") {
+            header('Location: ../index.php');
+        }else{
+            header("Location: ../index.php?action=iniciarsesion");
+        }
+    }
 
 
 ?>

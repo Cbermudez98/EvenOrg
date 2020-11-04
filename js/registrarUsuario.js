@@ -175,8 +175,4 @@ var pnombre = document.getElementById('primernombre'),
         
     }
 
-
-    
-
-   
    
