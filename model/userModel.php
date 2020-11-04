@@ -29,9 +29,6 @@
             $ps = $usuario->getPais();
             $cd = $usuario->getCiudad();
             
-            echo "primernombre: ".$pm."<br>"."segundo nombre: ".$sn."<br>"."primer apellido: ".$pa."<br>"."segundo apellido: ".$sa."<br>"."Tipo identificacion: ".$ti."<br>"."numero identificacion: ".$ni."<br>"
-            ."fecha de nacimiento: ".$fn."<br>"."Correo: ".$co."<br>"."contraseña: ".$pw."<br>"."Telefono: ".$tl."<br>"."Celular".$cl."<br>"."Pais: ".$ps."<br>"."Ciudad: ".$cd."<br>";
-
             $sql = "INSERT INTO usuario(primerNombre,segundoNombre,primerApellido,segundoApellido,tipoIdentificacion,numIdentificacion,fechaNacimiento,correo,contrasena,telefono,celular,pais,ciudad) VALUES ('$pm','$sn','$pa','$sa','$ti',$ni,'$fn','$co','$pw',$tl,$cl,'$ps','$cd')";
 
             if(mysqli_query($this->db, $sql)){
@@ -39,7 +36,46 @@
             }else{
                 $mensaje = "Error al guardar datos => ".mysqli_error($this->db);
             }
+            mysqli_close($this->db);
+            return $mensaje;
+        }
 
+
+        //Iniciar Sesion
+
+
+        public function iniciarSesion($usuario){
+            
+           $correo = $usuario->getCorreo();
+           $password = $usuario->getPassword();
+           
+            $sql = ("SELECT * FROM usuario WHERE correo='".$correo."' AND contrasena = '".$password."'");
+            $result = mysqli_query($this->db, $sql);
+
+            if (mysqli_num_rows($result)>0) {
+                while ($fila =mysqli_fetch_array($result)){
+                    session_start();
+                    $_SESSION['correo'] = $fila['correo'];
+                    $mensaje = "Bienvenido <a href='../index.php'>Volver al inicio</a>";
+                }
+            }else{
+                $mensaje = "error no se encontraron datos correspondientes al correo";
+            }
+            
+            return $mensaje;
+            
+        }
+
+        public function cerrarSesion(){
+            session_start();
+            session_destroy();
+            
+            if (isset($_SESSION['correo'])) {
+                $mensaje = "exito al cerrar sesion";
+            }else{
+                $mensaje = "";
+            }
+            
             return $mensaje;
         }
 
