@@ -9,7 +9,8 @@
 <!-- Start Form-->+
 <div class="font-weight-lighter w-150 p-3 text-center">
 <div class="container">
-   <form action="#" class="border mx-auto p-3 form" style="max-width: 400px;" >
+   <form action="controller/userController.php" method="POST" class="border mx-auto p-3 form" style="max-width: 400px;" >
+   <input type="hidden" name="token" value="iniciarsesion">
       <div class="form-group">
         <label for="user"></label>
         <input type="user" name="user" id="user" class="form-control" placeholder="Usuario o dirección de correo electrónico">
@@ -25,8 +26,10 @@
 
 
 <div class="font-weight-lighter w-150 p-3 text-center">
-<a href="index.php=action=olviarContrasena">¿Olvidó su contraseña?</a>
-<h6>¿No está registrado?<a href="index.php?action=registrarUsuario">¿Regístrese aquí?</a></h6>
+<a href="index.php?action=olviarContrasena">¿Olvidó su contraseña? Haz click aquí</a>
+<h6></h6>
+<h6>¿No está registrado?</h6>
+<h6><a href="index.php?action=registrarUsuario">Regístrese aquí</a></h6>
 </div>
 <div class="font-weight-lighter w-150 p-3 text-center">
   <h6>Al hacer click en "Iniciar", acepto los <a href="index.php?action=terminosycondiciones">términos de servicio</a>,</h6>
