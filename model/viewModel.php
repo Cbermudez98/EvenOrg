@@ -5,7 +5,7 @@
         public function enlacesPaginasModel($enlacesModel){
             
             if ($enlacesModel === "ayuda" || $enlacesModel === "solicitarEvento" ||
-            $enlacesModel === "iniciarsesion" || $enlacesModel === "registrarUsuario") {
+            $enlacesModel === "iniciarsesion" || $enlacesModel === "registrarUsuario" || $enlacesModel === "nuestrosLugares") {
 
                 $module = "view/modules/".$enlacesModel.".php";
 

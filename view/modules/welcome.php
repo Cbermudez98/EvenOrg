@@ -171,7 +171,7 @@
       <div class="card-body">
         <h5 class="card-title">Nuestros Lugares</h5>
         <p class="card-text">Mira todos los lugares que te ofrecemos para que crees tu evento favorito.</p>
-        <a href="#" class="btn btn-primary">Ver mas</a>
+        <a href="index.php?action=nuestrosLugares" class="btn btn-primary">Ver mas</a>
     </div>
     </div>
     <div class="card" style="width: 18rem;">
