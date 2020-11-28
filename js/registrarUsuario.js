@@ -55,22 +55,34 @@ var pnombre = document.getElementById('primernombre'),
 
     var validarCorreo = function(){
         var correo = co.value;
-        if(correo === null || correo === ""){
-            console.log('Error el campo correo no puede estar vacio');
-            return false;
-        }
-        for (let i = 0; i < correo.length; i++) {
+	var x = correo.length;
+	var respuesta = false;
+	if(correo === "" || correo === null){
+	  console.log("El campo correo no puede estar vacio");
+	  return false;
+	  
+	}else{
+        for (let i = 0; i < x; i++) {
             let caracter = correo.charAt(i);
-            if(caracter === "@"){
-                console.log('correo permitido');
-               
-            }else{
-                return false;
-            }
-            /*Pendiente la validacion del correo ¿porque se explota si esta bien?*/
-            /*regex expresiones regulares: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/ */
+	    if(caracter == "@"){
+	      console.log("caracter permitido");
+	      respuesta = true;
+	    }else{
+	      
+	    }
+	 
         }
     }
+      var fin = correo.substring(x-4);
+      if(fin !== ".com"){
+	console.log("Error correo incompleto");
+	respuesta = false;
+      }
+
+      console.log(respuesta);
+	return respuesta;
+
+  }
 
     var validarPassword = function(){
         var contr = pw.value,

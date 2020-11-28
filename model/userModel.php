@@ -54,30 +54,31 @@
 
             if (mysqli_num_rows($result)>0) {
                 while ($fila =mysqli_fetch_array($result)){
-                    session_start();
+		  session_start();
+		    $_SESSION['id'] = $fila['id'];
+		    $_SESSION['nombre'] = $fila['primerNombre']." ".$fila['primerApellido'];
                     $_SESSION['correo'] = $fila['correo'];
-                    $mensaje = "Bienvenido <a href='../index.php'>Volver al inicio</a>";
+                    $mensaje = "Bienvenido";
                 }
             }else{
-                $mensaje = "error no se encontraron datos correspondientes al correo";
+                $mensaje = "Error correo o contraseña incorrectos";
             }
-            
+	    mysqli_close($this->db);  
             return $mensaje;
             
         }
 
-        public function cerrarSesion(){
-            session_start();
-            session_destroy();
-            
-            if (isset($_SESSION['correo'])) {
-                $mensaje = "exito al cerrar sesion";
-            }else{
-                $mensaje = "";
-            }
-            
-            return $mensaje;
-        }
+	public function cerrarSesion(){
+	  session_start();
+	  if(isset($_SESSION['nombre']) && isset($_SESSION['correo'])){
+	    session_destroy();
+	    $mensaje = "exito al cerrar sesion";
+	  }else{
+	    $mensaje = "";
+	  }
+
+	  return $mensaje;
+	} 
 
         //leer
 

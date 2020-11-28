@@ -5,7 +5,8 @@
         public function enlacesPaginasModel($enlacesModel){
             
             if ($enlacesModel === "ayuda" || $enlacesModel === "solicitarEvento" ||
-            $enlacesModel === "iniciarsesion" || $enlacesModel === "registrarUsuario" || $enlacesModel === "nuestrosLugares") {
+	      $enlacesModel === "iniciarsesion" || $enlacesModel === "registrarUsuario" || $enlacesModel === "nuestrosLugares" 
+	      || $enlacesModel ==="perfil" || $enlacesModel === "terminosCondiciones" || $enlacesModel === "provedores" || $enlacesModel === "movilidadTransporte" || $enlacesModel === "desarrolladores" || $enlacesModel === "blog" || $enlacesModel === "proveedores" || $enlacesModel === "comoFunciona" || $enlacesModel === "cuantoCuesta" || $enlacesModel === "dondeEntrada" || $enlacesModel === "comoPonerseContacto") {
 
                 $module = "view/modules/".$enlacesModel.".php";
 
@@ -13,11 +14,13 @@
 
                 $module = "view/modules/welcome.php";
 
-            }else{
+            }elseif($enlacesModel === "" || $enlacesModel !== ""){
 
-                $module = "view/modules/welcome.php";
+                $module = "view/modules/404.php";
 
-            }
+	    }else{
+	      $module = "view/modules/welcome.php";
+	    }
 
             return $module;
         }

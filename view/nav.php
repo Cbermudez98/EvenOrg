@@ -1,7 +1,7 @@
 
 <?php
-if (isset($_SESSION['correo'])) {
-  $sesion = $_SESSION['correo'];
+if (isset($_SESSION['nombre'])) {
+  $sesion = $_SESSION['nombre'];
 }
 
 ?>
@@ -22,15 +22,15 @@ if (isset($_SESSION['correo'])) {
     <div class="dropdown">
       <a class="btn btn-link dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ayuda</a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Cómo funciona</a>
-            <a class="dropdown-item" href="#">¿Cuánto cuesta crear un evento?</a>
-            <a class="dropdown-item" href="#">¿Dónde estan mis entradas?</a>
-            <a class="dropdown-item" href="#">Cómo ponerse en contacto con el organizador del evento</a>
+            <a class="dropdown-item" href="index.php?action=comoFunciona">Cómo funciona</a>
+            <a class="dropdown-item" href="index.php?action=cuantoCuesta">¿Cuánto cuesta crear un evento?</a>
+            <a class="dropdown-item" href="index.php?action=dondeEntrada">¿Dónde estan mis entradas?</a>
+            <a class="dropdown-item" href="index.php?action=comoPonerseContacto">Cómo ponerse en contacto con el organizador del evento</a>
         </div>
       
       <a href="index.php?action=solicitarEvento" type="button" class="btn btn-link primary m-1 p-1">Crear evento</a>
       <a href="index.php?action=iniciarsesion" type="button" id="iniciarSesion" class="btn btn-link m-1 p-1">Iniciar sesion</a>
-      <!--<a href="controller/userController.php?var=cerrarsesion" type="button" class="btn btn-link m-1 p-1">cerrar sesion</a>-->
+      
     </div>
   </div>
 </nav>
@@ -42,10 +42,7 @@ if (isset($_SESSION['correo'])) {
   var bar = "<?php echo $sesion?>";
   
   if (bar !== null || bar !== "") {
-    var sesion = document.getElementById('iniciarSesion').innerHTML = "<a href='controller/userController.php?var=cerrarsesion' type='button' class='btn btn-link m-1 p-1'>cerrar sesion</a>";
-    
-    
-  }else{
+    var sesion = document.getElementById('iniciarSesion').innerHTML = "<a href='view/modules/template/index.php' type='button' class='btn btn-link m-1 p-1'>Ver perfil</a>";
     
   }
 </script>
