@@ -16,16 +16,16 @@
       <i class="fab fa-twitter"></i>
     </div>
     <div class="col-sm text-white">
-      <a href="#" class="text-white">Proveedores</a>
-      <a href="#" class="text-white">Desarrolladores</a>
+      <a href="index.php?action=proveedores" class="text-white">Proveedores</a>
+      <a href="index.php?action=desarrolladores" class="text-white">Desarrolladores</a>
     </div>
     <br>
     <div class="col-sm text-white">
-      <a href="#" class="text-white">Terminos y condiciones</a>
+      <a href="index.php?action=terminosCondiciones" class="text-white">Terminos y condiciones</a>
       
     </div>
     <div class="col-sm text-white">
-      <a href="#" class="text-white">Blog</a>
+      <a href="index.php?action=blog" class="text-white">Blog</a>
     </div>
   </div>
 

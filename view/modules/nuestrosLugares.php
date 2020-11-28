@@ -106,9 +106,9 @@
             </p>
         </div>
     </div>
-    <div class="col-6">
-    <div class="text-right p-2">
-        <img src="../img/rlp.jpg" width="604" height="221" >
+    <div class="col-5">
+    <div class="text-right p-1">
+        <img src="../evenorg/view/img/rlp.jpg" width="590" height="221" >
     </div> 
     </div>
   </div>

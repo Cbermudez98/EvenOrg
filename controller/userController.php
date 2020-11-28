@@ -166,7 +166,13 @@
                 $respuesta = $um->iniciarSesion($usuario);
             }
 
-            echo $respuesta;
+	    if($respuesta === "Bienvenido"){
+		header("Location: ../view/modules/template/index.php");
+	    }else{
+	      echo "<script>alert('".$respuesta."');
+	       window.location = '../index.php?action=iniciarsesion';
+	      </script>"; 
+	    }
 
         break;
 
@@ -174,10 +180,9 @@
             # code...
             break;
     }
-
-    if (isset($_GET['var'])) {
+if (isset($_GET['var'])) {
         error_reporting(0);
-        $user = $um->cerrarSesion($_SESSION['correo']);
+        $user = $um->cerrarSesion();
 
         if ($user !== "") {
             header('Location: ../index.php');
@@ -185,6 +190,8 @@
             header("Location: ../index.php?action=iniciarsesion");
         }
     }
+
+    
 
 
 ?>
